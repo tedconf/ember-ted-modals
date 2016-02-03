@@ -2,4 +2,8 @@
   &times;
 </a>
 
-<h3 class='Ted-modal-header__title'>{{title}}</h3>
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <h3 class='Ted-modal-header__title'>{{title}}</h3>
+{{/if}}
