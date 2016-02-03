@@ -15,6 +15,7 @@ ember install ember-modal-dialog</pre>
 <h2>Usage</h2>
 <button {{action 'toggleIsShowingModal'}} class="btn btn-primary">Show me a modal!</button>
 
+{{!-- BEGIN-SNIPPET demo --}}
 {{#if isShowingModal}}
   {{#ted-modal close='toggleIsShowingModal'}}
     {{ted-modal-header title='Present stage' close='toggleIsShowingModal'}}
@@ -30,3 +31,6 @@ ember install ember-modal-dialog</pre>
     {{/ted-modal-footer}}
   {{/ted-modal}}
 {{/if}}
+{{!-- END-SNIPPET --}}
+
+{{code-snippet name='demo.hbs'}}
