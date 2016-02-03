@@ -1,0 +1,13 @@
+.Ted-modal-footer {
+  padding: 15px;
+
+  &__primary-button {
+    @extend .btn;
+    @extend .btn-primary;
+    float: right;
+  }
+  &__cancel-button {
+    @extend .btn;
+    @extend .btn-default;
+  }
+}

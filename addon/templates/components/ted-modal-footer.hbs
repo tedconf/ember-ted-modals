@@ -1,0 +1,16 @@
+{{#if hasBlock}}
+
+  {{yield}}
+
+{{else}}
+
+  <a {{action 'dismiss'}} href='#' class='Ted-modal-footer__cancel-button'>Cancel</a>
+
+  {{async-button action='sendPrimaryAction'
+      class='Ted-modal-footer__primary-button'
+      classBinding='danger:btn-danger'
+      data-test-id=testId
+      default=default
+      pending=pending}}
+
+{{/if}}

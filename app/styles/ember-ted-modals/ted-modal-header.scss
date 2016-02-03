@@ -1,0 +1,25 @@
+.Ted-modal-header {
+  padding: 15px;
+  @media (max-width: 419px) {
+    border-top: 1px solid #ddd;
+  }
+
+  &__close {
+    opacity: 0.5;
+    float: right;
+    font-size: 30px;
+    line-height: 22px;
+    color: #999;
+
+    &:hover,
+    &:focus, {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  &__title {
+    margin-top: 5px;
+    margin: 0;
+  }
+}

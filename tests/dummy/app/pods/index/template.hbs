@@ -1,0 +1,32 @@
+<h2>Requirements</h2>
+<p>This addon requires the following addons be installed:</p>
+<ul>
+  <li>Ember CLI Sass</li>
+  <li><a href="https://github.com/tedconf/ember-cli-ted-bootstrap">Ember CLI TED Bootstrap</a></li>
+  <li><a href="https://github.com/yapplabs/ember-modal-dialog/">Ember Modal Dialog</a></li>
+</ul>
+<pre>ember install ember-cli-sass
+ember install ember-cli-ted-bootstrap
+ember install ember-modal-dialog</pre>
+
+<h2>Installation</h2>
+<pre>ember install ember-ted-modals</pre>
+
+<h2>Usage</h2>
+<button {{action 'toggleIsShowingModal'}} class="btn btn-primary">Show me a modal!</button>
+
+{{#if isShowingModal}}
+  {{#ted-modal close='toggleIsShowingModal'}}
+    {{ted-modal-header title='Present stage' close='toggleIsShowingModal'}}
+
+    {{#ted-modal-body}}
+      <p>Would you like to present the stage on this device?</p>
+      <p>If you do, you can get back here by pressing the Back button.</p>
+    {{/ted-modal-body}}
+
+    {{#ted-modal-footer}}
+      <a href="#" {{action 'toggleIsShowingModal'}} class='btn btn-link'>Cancel</a>
+      <a href="#" {{action 'presentStage'}} class='btn btn-primary pull-right'>Present stage</a>
+    {{/ted-modal-footer}}
+  {{/ted-modal}}
+{{/if}}

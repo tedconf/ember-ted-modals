@@ -1,26 +1,5 @@
-# Ember-ted-modals
+# Ember TED Modals
 
-This README outlines the details of collaborating on this Ember addon.
+> This addon is prepared for internal use by TED and is open-sourced for educational purposes but will not be supported for shared community use.
 
-## Installation
-
-* `git clone` this repository
-* `npm install`
-* `bower install`
-
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+Docs: http://tedconf.github.io/ember-ted-modals/
