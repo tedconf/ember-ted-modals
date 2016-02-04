@@ -9,13 +9,16 @@ export default ModalDialog.extend({
   overlayClassNames: ['Ted-modal-overlay'],
   containerClassNames: ['Ted-modal'],
   translucentOverlay: true,
+  screen: Ember.inject.service(),
 
   setup: Ember.on('didInsertElement', function() {
-    this.set('openedAt', Ember.$(window).scrollTop());
 
-    // This order works best for mobile rendering perf.
-    // Why?  ¯\_(ツ)_/¯  CSS
-    window.scrollTo(0, 0);
+    if (this.get('screen.width') < 420) {
+      // This order works best for mobile rendering perf.
+      // Why?  ¯\_(ツ)_/¯  CSS
+      this.set('openedAt', Ember.$(window).scrollTop());
+      window.scrollTo(0, 0);
+    }
     Ember.$('body').addClass('modal-showing');
 
     Ember.$('body').on('keyup.modal-dialog', (e) => {

@@ -5,6 +5,10 @@
   top: 0;
   left: 0;
   z-index: 200;
+
+  @media (min-width: 420px) {
+    position: fixed;
+  }
 }
 
 body {
