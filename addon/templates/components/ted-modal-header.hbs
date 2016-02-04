@@ -2,8 +2,10 @@
   &times;
 </a>
 
-{{#if hasBlock}}
-  {{yield}}
-{{else}}
-  <h3 class='Ted-modal-header__title'>{{title}}</h3>
-{{/if}}
+<h3 class='Ted-modal-header__title'>
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{title}}
+  {{/if}}
+</h3>
