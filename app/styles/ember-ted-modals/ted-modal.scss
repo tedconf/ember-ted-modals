@@ -1,3 +1,7 @@
 .Ted-modal {
   background: white;
+  border-bottom: 1px solid #ddd;
+  @media (max-width: 419px) {
+    border-top: 1px solid #bbb;
+  }
 }

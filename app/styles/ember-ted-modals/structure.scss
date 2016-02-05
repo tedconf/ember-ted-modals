@@ -1,7 +1,7 @@
 .ember-modal-wrapper {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 200;
@@ -11,12 +11,28 @@
   }
 }
 
+.modal-showing #modal-overlays {
+  background: white;
+  @media (max-width: 419px) {
+    // height: 100%;
+    // position: relative;
+  }
+}
+
 body {
   &.modal-showing {
     @media (max-width: 419px) {
-      & > .ember-view {
-        display: none;
-      }
+      overflow: hidden;
+      // position: fixed;
+      // width: 100%;
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      // right: 0;
+      // opacity: 0;
+      // & > .ember-view {
+      //   display: none;
+      // }
     }
     @media (min-width: 420px) {
       overflow: hidden;
@@ -28,13 +44,24 @@ body {
   z-index: 101;
 
   @media (max-width: 419px) {
-    animation: slideUp 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    animation-delay: 0.01s;
-    animation-fill-mode: backwards;
-    position: relative;
-    display: table;
-    height: 100%;
-    width: 100%;
+    // animation: slideUp 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    // animation-delay: 0.01s;
+    // animation-fill-mode: backwards;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgba(255, 255, 255, .94);
+    animation: fadeIn 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    // position: relative;
+    // display: table;
+    // height: 100%;
+    // width: 100%;
+    // background-color: rgba(255, 255, 255, .94);
   }
 
   @media (min-width: 420px) {
@@ -50,7 +77,9 @@ body {
 
 .Ted-modal {
   @media (max-width: 419px) {
-    margin: 0!important;
+    animation: slideUp 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    animation-delay: 0.15s;
+    animation-fill-mode: backwards;   margin: 0!important;
     left: 0!important;
     top: 0!important;
     position: relative;

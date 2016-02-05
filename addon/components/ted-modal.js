@@ -1,24 +1,14 @@
-import ModalDialog from 'ember-modal-dialog/components/modal-dialog';
 import Ember from 'ember';
+import layout from '../templates/components/ted-modal';
 
-export default ModalDialog.extend({
+export default Ember.Component.extend({
+  layout,
 
-  // dismiss: 'dismiss',
-  // close: 'dismiss',
-
-  overlayClassNames: ['Ted-modal-overlay'],
-  containerClassNames: ['Ted-modal'],
-  translucentOverlay: true,
   screen: Ember.inject.service(),
 
-  setup: Ember.on('didInsertElement', function() {
+  shouldShowModal: true,
 
-    if (this.get('screen.width') < 420) {
-      // This order works best for mobile rendering perf.
-      // Why?  ¯\_(ツ)_/¯  CSS
-      this.set('openedAt', Ember.$(window).scrollTop());
-      window.scrollTo(0, 0);
-    }
+  setup: Ember.on('didInsertElement', function() {
     Ember.$('body').addClass('modal-showing');
 
     Ember.$('body').on('keyup.modal-dialog', (e) => {
@@ -31,13 +21,10 @@ export default ModalDialog.extend({
   teardown: Ember.on('willDestroyElement', function() {
     Ember.$('body').off('keyup.modal-dialog');
     Ember.$('body').removeClass('modal-showing');
-    if (this.get('openedAt')) {
-      window.scrollTo(0, this.get('openedAt'));
-    }
   }),
 
   actions: {
-    dismiss() {
+    close() {
       this.sendAction('close');
     }
   }
