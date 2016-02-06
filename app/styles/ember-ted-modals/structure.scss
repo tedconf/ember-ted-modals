@@ -1,4 +1,6 @@
-// Fullscreen Modal (used on mobile)
+/*
+  Fullscreen Modal (used on mobile)
+*/
 @media (max-width: 419px) {
   body {
     &.modal-showing {
@@ -28,7 +30,9 @@
     top: 0!important;
     bottom: 0;
     position: relative;
-    display: table-cell;
+    // display: table-cell;
+    // display: inline-block;
+    // width: 100%;
   }
 }
 
@@ -98,10 +102,10 @@
 }
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+    background-color: rgba(255, 255, 255, 0);
   }
   100% {
-    opacity: 1;
+    background-color: rgba(255, 255, 255, .9);
   }
 }
 

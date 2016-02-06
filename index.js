@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-ted-modals',
+  name: 'ember-ted-modals'
 };
