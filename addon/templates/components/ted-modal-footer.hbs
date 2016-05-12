@@ -4,10 +4,10 @@
 
 {{else}}
 
-  <a {{action 'dismiss'}} href='#' class='Ted-modal-footer__cancel-button'>Cancel</a>
+  <a {{action 'dismiss'}} href='#' class='Ted-modal-footer__cancel-button btn btn-default'>Cancel</a>
 
   {{async-button action='sendPrimaryAction'
-      class='Ted-modal-footer__primary-button'
+      class='Ted-modal-footer__primary-button btn btn-primary pull-right'
       classBinding='danger:btn-danger'
       data-test-id=testId
       default=default
